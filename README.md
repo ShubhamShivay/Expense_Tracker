@@ -1,10 +1,6 @@
-/******\******* ✨ Codeium Command 🌟 ******\*******/
+/**\*\***\***\*\*** ✨ Welcome G 🌟 **\*\***\***\*\***/
 
 This is a full-stack MERN application for managing expenses. It includes a frontend built with React, Redux, and Tailwind CSS, and a backend built with Node.js, Express, and MongoDB. The application allows users to create an account, log in, and manage their expenses by adding, updating, and deleting transactions. The application also includes a dashboard for viewing transaction history and statistics. The application is secured with JSON Web Tokens and password hashing.
-
-/**\*\*** 79892f4d-9100-486f-8ad0-4d6e16d7f114 **\*\*\***/
-
-/******\******* ✨ Codeium Command ⭐ ******\*******/
 
 ### Features
 
@@ -15,9 +11,6 @@ This is a full-stack MERN application for managing expenses. It includes a front
 - **API Integration:** Seamless interaction with backend services using Axios.
 - **Data Validation:** Form validation using Yup schema.
 - **State Management:** Efficient state handling using Redux.
-  /**\*\*** 1f8ae1ee-ba21-404e-8376-60cdefe24acc **\*\*\***/
-
-/******\******* ✨ Codeium Command ⭐ ******\*******/
 
 ### Blog Post
 
@@ -108,8 +101,6 @@ The application is also fully maintainable, with a set of automated code review 
 The application is also fully accessible, with a set of automated accessibility tools built with Lighthouse and Codeium. The application is also fully accessible, with a set of automated accessibility tools built with Codeium.
 
 The application is also fully secure, with a set of automated security tools built with OWASP ZAP and Codeium. The application is also fully secure, with a set of automated security audits built with Codeium.
-
-/**\*\*** 1be043ac-cdc3-4733-9e79-b1cd6cf2f40e **\*\*\***/
 
 ## How to Use the Application
 
