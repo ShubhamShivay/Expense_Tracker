@@ -12,6 +12,38 @@ This is a full-stack MERN application for managing expenses. It includes a front
 - **Data Validation:** Form validation using Yup schema.
 - **State Management:** Efficient state handling using Redux.
 
+## How to Use the Application
+
+1. **Set Up the Environment**:
+
+   - Ensure you have Node.js and MongoDB installed on your machine.
+   - Clone the repository and navigate to the project directory.
+
+2. **Backend Setup**:
+
+   - Navigate to the `backend` folder.
+   - Run `npm install` to install the dependencies.
+   - Create a `.env` file and configure your environment variables (e.g., MongoDB URI, JWT secret).
+   - Run `npm start` to start the backend server.
+
+3. **Frontend Setup**:
+
+   - Navigate to the `frontend` folder.
+   - Run `npm install` to install the dependencies.
+   - Run `npm run dev` to start the frontend development server.
+
+4. **Access the Application**:
+
+   - Open your browser and go to `http://localhost:3000` to access the application.
+   - Register a new account or log in with existing credentials.
+   - Use the dashboard to manage your expenses by adding, updating, or deleting transactions.
+
+5. **Deployment**:
+   - To deploy the application, build the frontend using `npm run build` in the `frontend` directory.
+   - Deploy the backend and built frontend to your preferred hosting services.
+
+Ensure both the backend and frontend are running simultaneously for full functionality. Follow the instructions carefully to avoid any setup issues.
+
 ### Blog Post
 
 This project is a full-stack MERN application for managing expenses. It includes a frontend built with React, Redux, and Tailwind CSS, and a backend built with Node.js, Express, and MongoDB. The application allows users to create an account, log in, and manage their expenses by adding, updating, and deleting transactions. The application also includes a dashboard for viewing transaction history and statistics. The application is secured with JSON Web Tokens and password hashing.
@@ -102,34 +134,5 @@ The application is also fully accessible, with a set of automated accessibility 
 
 The application is also fully secure, with a set of automated security tools built with OWASP ZAP and Codeium. The application is also fully secure, with a set of automated security audits built with Codeium.
 
-## How to Use the Application
-
-1. **Set Up the Environment**:
-
-   - Ensure you have Node.js and MongoDB installed on your machine.
-   - Clone the repository and navigate to the project directory.
-
-2. **Backend Setup**:
-
-   - Navigate to the `backend` folder.
-   - Run `npm install` to install the dependencies.
-   - Create a `.env` file and configure your environment variables (e.g., MongoDB URI, JWT secret).
-   - Run `npm start` to start the backend server.
-
-3. **Frontend Setup**:
-
-   - Navigate to the `frontend` folder.
-   - Run `npm install` to install the dependencies.
-   - Run `npm run dev` to start the frontend development server.
-
-4. **Access the Application**:
-
-   - Open your browser and go to `http://localhost:3000` to access the application.
-   - Register a new account or log in with existing credentials.
-   - Use the dashboard to manage your expenses by adding, updating, or deleting transactions.
-
-5. **Deployment**:
-   - To deploy the application, build the frontend using `npm run build` in the `frontend` directory.
-   - Deploy the backend and built frontend to your preferred hosting services.
-
-Ensure both the backend and frontend are running simultaneously for full functionality. Follow the instructions carefully to avoid any setup issues.
+Thank You!
+(Shubham Kumar)
