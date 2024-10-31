@@ -17,8 +17,8 @@ import TransactionChart from "./components/Transactions/TransactionChart.jsx";
 
 function App() {
   const user = useSelector((state) => state?.auth?.user);
-  // console.log(user);
-  // console.log(token);
+  console.log(user?.token);
+
   return (
     <BrowserRouter>
       {user ? <PrivateNavbar /> : <PublicNavbar />}

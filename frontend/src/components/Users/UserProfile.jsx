@@ -4,6 +4,7 @@ import { useFormik } from "formik";
 import UpdatePassword from "./UpdatePassword";
 
 const UserProfile = () => {
+  
   const formik = useFormik({
     initialValues: {
       email: "",

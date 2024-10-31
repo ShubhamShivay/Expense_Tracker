@@ -14,11 +14,11 @@ function capitalizeFirstLetter(val) {
 
 const CategoriesList = () => {
   const { isLoading, error, data, isFetched, refetch } = useQuery({
-    queryKey: ["categories"],
     queryFn: getCategoryAPI,
+    queryKey: ["categories"],
   });
 
-  // console.log(data);
+  console.log("Categories", data);
 
   //! Delete Category
   const navigate = useNavigate();

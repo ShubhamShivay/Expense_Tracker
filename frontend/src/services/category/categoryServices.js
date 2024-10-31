@@ -3,9 +3,10 @@ import axios from "axios";
 import { getUserFromStorage } from "../../utils/getUserFromStorage";
 
 const token = getUserFromStorage();
+console.log("token", token?.token || null);
 
 //! @desc   User Add Category
-export const addCategoryAPI = async ({ name, type }) => {
+export const addCategoryAPI = async ({ name, type, token }) => {
   const res = await axios.post(
     `${BaseUrl}/categories/add`,
     {
@@ -28,7 +29,7 @@ export const addCategoryAPI = async ({ name, type }) => {
 export const getCategoryAPI = async () => {
   const res = await axios.get(`${BaseUrl}/categories/all`, {
     headers: {
-      Authorization: `Bearer ${token?.token}`,
+      Authorization: `Bearer ${token?.token || null}`,
     },
   });
 
