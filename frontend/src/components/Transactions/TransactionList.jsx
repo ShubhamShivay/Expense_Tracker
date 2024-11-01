@@ -1,8 +1,13 @@
 import React from "react";
 import { FaEdit, FaTrash } from "react-icons/fa";
 import { useQuery } from "@tanstack/react-query";
+import { getTransactionsAPI } from "../../services/transactions/transactionServices";
 
 const TransactionList = () => {
+  const { data: transactions } = useQuery({
+    queryKey: ["transactions"],
+    queryFn: getTransactionsAPI,
+  });
   return (
     <div className="mt-6">
       <h3 className="text-xl font-semibold mb-2">Transactions</h3>
@@ -31,7 +36,7 @@ const TransactionList = () => {
             </tr>
           </thead>
           <tbody className="bg-white divide-y divide-gray-200">
-            {/* {transactions?.map((transaction) => (
+            {transactions?.map((transaction) => (
               <tr key={transaction.id}>
                 <td className="px-6 py-4 whitespace-nowrap">
                   {new Date(transaction.date).toLocaleDateString()}
@@ -57,7 +62,7 @@ const TransactionList = () => {
                   </button>
                 </td>
               </tr>
-            ))} */}
+            ))}
           </tbody>
         </table>
       </div>

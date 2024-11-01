@@ -57,7 +57,14 @@ const CategoriesList = () => {
         </h2>
 
         <ul className="space-y-4">
-          {data?.data?.map((category) => (
+          {data?.data?.data?.length === 0 && (
+            <li className="flex justify-between items-center bg-gray-50 p-3 rounded-md">
+              <div>
+                <span className="text-gray-800">No categories found</span>
+              </div>
+            </li>
+          )}
+          {data?.data?.data?.map((category) => (
             <li
               key={category?._id}
               className="flex justify-between items-center bg-gray-50 p-3 rounded-md"

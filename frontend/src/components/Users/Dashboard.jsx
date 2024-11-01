@@ -7,6 +7,8 @@ import TransactionsList from "../Transactions/TransactionsList";
 const Dashboard = () => {
   return (
     <>
+      {/* If transactions not found show Message */}
+
       <TransactionChart />
       <TransactionsList />
     </>

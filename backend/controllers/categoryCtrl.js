@@ -2,54 +2,52 @@ import asyncHandler from "express-async-handler";
 import Category from "../model/Category.js";
 
 
-//! @desc   Add category
+//! @desc   Add category by user
 //! @route  POST /Category
 //! @access Private
 
 export const addCategoryCtrl = asyncHandler(async (req, res) => {
   const { name, type } = req.body;
 
-  if (!name || !type) {
-    res.status(400);
-    throw new Error("Please add all fields");
-  }
+  //! Normalize name and type if they exist
+  const normalizedName = name ? name.toLowerCase() : name;
+  const normalizedType = type ? type.toLowerCase() : type;
 
-  const validTypes = ["income", "expense"];
-  if (!validTypes.includes(type.toLowerCase())) {
-    res.status(400);
-    throw new Error(
-      `Invalid category type ${type}. Valid types are ${validTypes}`
-    );
-  }
-
-  const categoryExists = await Category.findOne({ name: name.toLowerCase() });
+  // ! Check if category already exists
+  const categoryExists = await Category.findOne({
+    user: req.userAuthId._id,
+    name: normalizedName,
+    type: normalizedType,
+  });
   if (categoryExists) {
     res.status(400);
     throw new Error("Category already exists");
   }
 
-  console.log(req.userAuthId._id);
-  // ! Create category
   const category = await Category.create({
     user: req.userAuthId._id,
-    name: name.toLowerCase(),
-    type,
+    name: normalizedName,
+    type: normalizedType,
   });
-  //! Generate token
-  res.status(201).json({
+
+  res.json({
     status: "success",
     message: "Category added successfully",
     data: category,
   });
 });
 
-//! @desc   Get all categories
+//! @desc   Get all categories by user
 //! @route  GET /Category
 //! @access Public
 
 export const getAllCategoriesCtrl = asyncHandler(async (req, res) => {
-  const categories = await Category.find();
-  res.json(categories);
+  const categories = await Category.find({ user: req.userAuthId._id });
+  res.json({
+    status: "success",
+    message: "Categories fetched successfully",
+    data: categories,
+  });
 });
 
 //! @desc   Update category

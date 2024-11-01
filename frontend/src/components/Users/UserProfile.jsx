@@ -2,9 +2,21 @@ import React from "react";
 import { FaUserCircle, FaEnvelope, FaLock } from "react-icons/fa";
 import { useFormik } from "formik";
 import UpdatePassword from "./UpdatePassword";
+import { userProfileAPI } from "../../services/users/userServices";
+import { useQuery } from "@tanstack/react-query";
+
+function capitalizeFirstLetter(val) {
+  return String(val).charAt(0).toUpperCase() + String(val).slice(1);
+}
 
 const UserProfile = () => {
-  
+  const { data: user, isLoading } = useQuery({
+    queryKey: ["user"],
+    queryFn: userProfileAPI,
+  });
+
+  console.log(user);
+
   const formik = useFormik({
     initialValues: {
       email: "",
@@ -20,9 +32,36 @@ const UserProfile = () => {
     <>
       <div className="max-w-4xl mx-auto my-10 p-8 bg-white rounded-lg shadow-md">
         <h1 className="mb-2 text-2xl text-center font-extrabold">
-          Welcome Masynctech
+          Welcome{" "}
+          {user ? capitalizeFirstLetter(user?.data?.data.username) : "User"}
           <span className="text-gray-500 text-sm ml-2">info@gmail.com</span>
         </h1>
+        <div>
+          {user ? (
+            <img
+              src={user?.data?.data.image}
+              alt="user"
+              className="w-20 h-20 rounded-full mx-auto"
+            />
+          ) : (
+            <img
+              src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png"
+              alt="user"
+              className="w-20 h-20 rounded-full mx-auto"
+            />
+          )}
+          {user ? (
+            <h3 className="text-xl font-semibold text-gray-800 mb-4">
+              {user?.data?.data.username}
+            </h3>
+          ) : (
+            <h3 className="text-xl font-semibold text-gray-800 mb-4">
+              Username
+            </h3>
+          )}
+
+          
+        </div>
         <h3 className="text-xl font-semibold text-gray-800 mb-4">
           Update Profile
         </h3>

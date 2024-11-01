@@ -3,7 +3,7 @@ import { BaseUrl } from "../../utils/url";
 import axios from "axios";
 
 const user = getUserFromStorage();
-console.log(user?.token);
+// console.log(user?.token);
 
 //! @desc   Add Transaction
 export const addTransactionAPI = async ({

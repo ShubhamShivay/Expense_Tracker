@@ -162,7 +162,7 @@ const TransactionForm = () => {
         >
           <option value="">Select a category</option>
           {/* Select category */}
-          {categories?.data?.map((category) => (
+          {categories?.data?.data?.map((category) => (
             <option key={category?._id} value={category?.name}>
               {capitalizeFirstLetter(category?.name)}
             </option>

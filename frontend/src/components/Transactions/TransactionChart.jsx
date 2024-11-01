@@ -77,14 +77,26 @@ const TransactionChart = () => {
   };
 
   return (
-    <div className="my-10 p-6 bg-white rounded-lg shadow-xl border border-gray-200">
-      <h1 className="text-2xl font-bold text-center mb-6">
-        Transaction Overview
-      </h1>
-      <div style={{ height: "350px" }}>
-        <Doughnut data={data} options={options} />
+    <>
+      <div className="my-10 p-6 bg-white rounded-lg shadow-xl border border-gray-200">
+        <h1 className="text-2xl font-bold text-center mb-6">
+          Transaction Overview
+        </h1>
+
+        <div style={{ height: "350px" }}>
+          <Doughnut data={data} options={options} />
+        </div>
+        {isLoading && <p>Loading...</p>}
+        {transactions?.data?.length === 0 && (
+          <div className="flex items-center justify-center h-full">
+            <div className="flex items-center space-x-2">
+              <FaBox className="text-3xl text-gray-400" />
+              <span className="text-gray-500">No transactions found</span>
+            </div>
+          </div>
+        )}
       </div>
-    </div>
+    </>
   );
 };
 

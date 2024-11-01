@@ -2,8 +2,8 @@ import { BaseUrl } from "../../utils/url";
 import axios from "axios";
 import { getUserFromStorage } from "../../utils/getUserFromStorage";
 
-const token = getUserFromStorage();
-console.log("token", token?.token || null);
+const user = getUserFromStorage();
+console.log("token", user?.token || null);
 
 //! @desc   User Add Category
 export const addCategoryAPI = async ({ name, type, token }) => {
@@ -15,7 +15,7 @@ export const addCategoryAPI = async ({ name, type, token }) => {
     },
     {
       headers: {
-        Authorization: `Bearer ${token?.token}`,
+        Authorization: `Bearer ${user?.token}`,
       },
     }
   );
@@ -29,7 +29,7 @@ export const addCategoryAPI = async ({ name, type, token }) => {
 export const getCategoryAPI = async () => {
   const res = await axios.get(`${BaseUrl}/categories/all`, {
     headers: {
-      Authorization: `Bearer ${token?.token || null}`,
+      Authorization: `Bearer ${user?.token || null}`,
     },
   });
 
@@ -46,7 +46,7 @@ export const updateCategoryAPI = async ({ id, name, type }) => {
     },
     {
       headers: {
-        Authorization: `Bearer ${token?.token}`,
+        Authorization: `Bearer ${user?.token}`,
       },
     }
   );
@@ -58,7 +58,7 @@ export const updateCategoryAPI = async ({ id, name, type }) => {
 export const deleteCategoryAPI = async ({ id }) => {
   const res = await axios.delete(`${BaseUrl}/categories/delete/${id}`, {
     headers: {
-      Authorization: `Bearer ${token?.token}`,
+      Authorization: `Bearer ${user?.token}`,
     },
   });
 

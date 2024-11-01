@@ -1,5 +1,8 @@
+import { getUserFromStorage } from "../../utils/getUserFromStorage";
 import { BaseUrl } from "../../utils/url";
 import axios from "axios";
+
+const user = getUserFromStorage();
 
 //! @desc   User Login
 export const loginAPI = async ({ email, password }) => {
@@ -17,6 +20,17 @@ export const registerAPI = async ({ username, email, password }) => {
     username,
     email,
     password,
+  });
+
+  return res;
+};
+
+//! @desc   User Profile
+export const userProfileAPI = async () => {
+  const res = await axios.get(`${BaseUrl}/users/profile`, {
+    headers: {
+      Authorization: `Bearer ${user?.token || null}`,
+    },
   });
 
   return res;
