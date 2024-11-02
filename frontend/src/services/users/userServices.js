@@ -35,3 +35,22 @@ export const userProfileAPI = async () => {
 
   return res;
 };
+
+//! @desc   Change Password
+export const changePasswordAPI = async ({ currentPassword, newPassword }) => {
+  console.log(currentPassword, newPassword);
+  const res = await axios.put(
+    `${BaseUrl}/users/change-password`,
+    {
+      currentPassword,
+      newPassword,
+    },
+    {
+      headers: {
+        Authorization: `Bearer ${user?.token || null}`,
+      },
+    }
+  );
+
+  return res;
+};

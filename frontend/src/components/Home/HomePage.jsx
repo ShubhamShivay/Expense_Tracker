@@ -10,6 +10,9 @@ import {
 import { IoIosStats } from "react-icons/io";
 import { FaFilter } from "react-icons/fa6";
 import { Link } from "react-router-dom";
+import { getUserFromStorage } from "../../utils/getUserFromStorage";
+
+const user = getUserFromStorage();
 const HeroSection = () => {
   return (
     <>
@@ -42,7 +45,7 @@ const HeroSection = () => {
           </div>
 
           {/* Call to Action Button */}
-          <Link to="/register">
+          <Link to={user.token ? "/dashboard" : "/login"}>
             <button className="mt-8 px-6 py-3 bg-white text-green-500 font-semibold rounded-lg shadow-md hover:bg-gray-100 transition duration-300">
               Get Started
             </button>

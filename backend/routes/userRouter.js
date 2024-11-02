@@ -6,6 +6,8 @@ import {
   updateUserProfileCtrl,
   getAllUsersCtrl,
   deleteUserCtrl,
+  changePasswordCtrl,
+  forgotPasswordCtrl,
 } from "../controllers/usersCtrl.js";
 import { isLoggedIn } from "../middleware/isLogggedIn.js";
 import { isAdmin } from "../middleware/isAdmin.js";
@@ -18,5 +20,7 @@ userRouter.get("/profile", isLoggedIn, userProfileCtrl);
 userRouter.get("/all", isLoggedIn, isAdmin, getAllUsersCtrl);
 userRouter.put("/update", isLoggedIn, updateUserProfileCtrl);
 userRouter.delete("/delete", isLoggedIn, deleteUserCtrl);
+userRouter.put("/change-password", isLoggedIn, changePasswordCtrl);
+userRouter.put("/reset-password", isLoggedIn, forgotPasswordCtrl);
 
 export default userRouter;

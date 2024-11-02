@@ -5,6 +5,7 @@ import UpdatePassword from "./UpdatePassword";
 import { userProfileAPI } from "../../services/users/userServices";
 import { useQuery } from "@tanstack/react-query";
 
+//! Capitalize First Letter
 function capitalizeFirstLetter(val) {
   return String(val).charAt(0).toUpperCase() + String(val).slice(1);
 }
@@ -31,36 +32,47 @@ const UserProfile = () => {
   return (
     <>
       <div className="max-w-4xl mx-auto my-10 p-8 bg-white rounded-lg shadow-md">
-        <h1 className="mb-2 text-2xl text-center font-extrabold">
-          Welcome{" "}
-          {user ? capitalizeFirstLetter(user?.data?.data.username) : "User"}
-          <span className="text-gray-500 text-sm ml-2">info@gmail.com</span>
-        </h1>
-        <div>
-          {user ? (
-            <img
-              src={user?.data?.data.image}
-              alt="user"
-              className="w-20 h-20 rounded-full mx-auto"
-            />
-          ) : (
-            <img
-              src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png"
-              alt="user"
-              className="w-20 h-20 rounded-full mx-auto"
-            />
-          )}
-          {user ? (
-            <h3 className="text-xl font-semibold text-gray-800 mb-4">
-              {user?.data?.data.username}
-            </h3>
-          ) : (
-            <h3 className="text-xl font-semibold text-gray-800 mb-4">
-              Username
-            </h3>
-          )}
-
-          
+        <h1 className="mb-2 text-2xl text-center font-extrabold">Welcome</h1>
+        <div className=" my-4">
+          <div className="max-w-md mx-auto bg-white rounded-xl shadow-md overflow-hidden md:max-w-2xl">
+            <div className="md:flex items-center">
+              {user ? (
+                <img
+                  src={
+                    user?.data?.data.image ||
+                    "https://cdn.pixabay.com/photo/2017/09/16/19/33/parrot-2756488_1280.jpg"
+                  }
+                  alt="user"
+                  className="w-20 h-20 rounded-full mx-auto"
+                />
+              ) : (
+                <img
+                  src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png"
+                  alt="user"
+                  className="w-20 h-20 rounded-full mx-auto"
+                />
+              )}
+              <div className="p-8">
+                <div className="uppercase tracking-wide text-sm text-indigo-500 font-semibold">
+                  {user
+                    ? capitalizeFirstLetter(user?.data?.data.username)
+                    : "User"}
+                </div>
+                <a
+                  href=""
+                  className="block mt-1 text-lg leading-tight font-medium text-black hover:underline"
+                >
+                  {user
+                    ? capitalizeFirstLetter(user?.data?.data?.designation)
+                    : "User"}
+                </a>
+                <p className="mt-2 text-gray-600">
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed
+                  sit amet nulla auctor, vestibulum magna sed, convallis ex.
+                </p>
+              </div>
+            </div>
+          </div>
         </div>
         <h3 className="text-xl font-semibold text-gray-800 mb-4">
           Update Profile
