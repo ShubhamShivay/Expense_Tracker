@@ -5,7 +5,7 @@ import * as Yup from "yup";
 import { useMutation } from "@tanstack/react-query";
 import { FaEnvelope, FaLock } from "react-icons/fa";
 import { loginAPI } from "../../services/users/userServices";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import AlertMessage from "../Alert/AlerMesg";
 import { loginAction } from "../../redux/slice/authSlice";
 
@@ -119,12 +119,12 @@ const LoginForm = () => {
         {/* //! For New User */}
         <p className="text-sm text-center text-gray-500">
           Don't have an account?{" "}
-          <a
-            href="/register"
+          <Link
+            to="/register"
             className="text-blue-500 hover:text-blue-700 font-semibold"
           >
             Register
-          </a>
+          </Link>
         </p>
       </form>
     </>
