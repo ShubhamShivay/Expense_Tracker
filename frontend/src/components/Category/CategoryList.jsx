@@ -18,7 +18,7 @@ const CategoriesList = () => {
     queryKey: ["categories"],
   });
 
-  console.log("Categories", data);
+  // console.log("Categories", data);
 
   //! Delete Category
   const navigate = useNavigate();

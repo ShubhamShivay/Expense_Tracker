@@ -29,8 +29,8 @@ const LoginForm = () => {
   // ! Formik
   const formik = useFormik({
     initialValues: {
-      email: "ksubham956@gmail.com",
-      password: "123456",
+      email: "",
+      password: "",
     },
 
     //Validations
@@ -41,7 +41,7 @@ const LoginForm = () => {
       mutateAsync(values)
         .then((data) => {
           // ! Dispatch action
-          dispatch(loginAction(data)); 
+          dispatch(loginAction(data));
           // ! Store token in local storage
           localStorage.setItem("userInfo", JSON.stringify(data.data));
           // console.log(data);
