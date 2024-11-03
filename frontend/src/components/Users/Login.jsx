@@ -68,21 +68,17 @@ const LoginForm = () => {
         <h2 className="text-3xl font-semibold text-center text-gray-800">
           Login
         </h2>
-
         {/* Display alert message */}
         {isError && (
           <AlertMessage type="error" message={error?.response?.data?.message} />
         )}
-
         {isLoading && <AlertMessage type="loading" message="Logging in..." />}
-
         {isSuccess && (
           <AlertMessage type="success" message="Login successful" />
         )}
         <p className="text-sm text-center text-gray-500">
           Login to access your account
         </p>
-
         {/* Input Field - Email */}
         <div className="relative">
           <FaEnvelope className="absolute top-3 left-3 text-gray-400" />
@@ -97,7 +93,6 @@ const LoginForm = () => {
             <span className="text-md text-red-500">{formik.errors.email}</span>
           )}
         </div>
-
         {/* Input Field - Password */}
         <div className="relative">
           <FaLock className="absolute top-3 left-3 text-gray-400" />
@@ -114,7 +109,6 @@ const LoginForm = () => {
             </span>
           )}
         </div>
-
         {/* Submit Button */}
         <button
           type="submit"
@@ -122,6 +116,16 @@ const LoginForm = () => {
         >
           Login
         </button>
+        //! For New User
+        <p className="text-sm text-center text-gray-500">
+          Don't have an account?{" "}
+          <a
+            href="/register"
+            className="text-blue-500 hover:text-blue-700 font-semibold"
+          >
+            Register
+          </a>
+        </p>
       </form>
     </>
   );
