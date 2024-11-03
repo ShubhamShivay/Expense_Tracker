@@ -16,7 +16,9 @@ const app = express();
 
 // ! CORS
 const allowedOrigins = {
-  origin: ["https://expense-tracker-ten-blush.vercel.app"],
+  origin: [
+    "https://expense-tracker-git-main-shubhamshivays-projects.vercel.app",
+  ],
 };
 app.use(cors(allowedOrigins)); //? To allow cross-origin requests
 
