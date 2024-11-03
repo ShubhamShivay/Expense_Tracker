@@ -38,7 +38,7 @@ export const userProfileAPI = async () => {
 
 //! @desc   Change Password
 export const changePasswordAPI = async ({ currentPassword, newPassword }) => {
-  console.log(currentPassword, newPassword);
+  // console.log(currentPassword, newPassword);
   const res = await axios.put(
     `${BaseUrl}/users/change-password`,
     {

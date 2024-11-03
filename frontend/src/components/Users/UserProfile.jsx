@@ -16,7 +16,7 @@ const UserProfile = () => {
     queryFn: userProfileAPI,
   });
 
-  console.log(user);
+  // console.log(user);
 
   const formik = useFormik({
     initialValues: {
@@ -26,7 +26,7 @@ const UserProfile = () => {
 
     //Submit
     onSubmit: (values) => {
-      console.log(values);
+      // console.log(values);
     },
   });
   return (

@@ -31,7 +31,7 @@ const UpdatePassword = () => {
     validationSchema,
     //Submit
     onSubmit: (values) => {
-      console.log(values);
+      // console.log(values);
 
       mutateAsync(values)
         .then((data) => {
@@ -42,7 +42,7 @@ const UpdatePassword = () => {
           }, 3000);
         })
         .catch((error) => {
-          console.log(error);
+          // console.log(error);
         });
     },
   });

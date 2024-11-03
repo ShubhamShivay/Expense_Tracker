@@ -3,7 +3,7 @@ import axios from "axios";
 import { getUserFromStorage } from "../../utils/getUserFromStorage";
 
 const user = getUserFromStorage();
-console.log("token", user?.token || null);
+// console.log("token", user?.token || null);
 
 //! @desc   User Add Category
 export const addCategoryAPI = async ({ name, type, token }) => {

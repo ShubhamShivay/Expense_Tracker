@@ -16,7 +16,7 @@ const app = express();
 
 // ! CORS
 const allowedOrigins = {
-  origin: ["http://localhost:5173"],
+  origin: ["https://expense-tracker-ten-blush.vercel.app", "http://localhost:3000"],
 };
 app.use(cors(allowedOrigins)); //? To allow cross-origin requests
 

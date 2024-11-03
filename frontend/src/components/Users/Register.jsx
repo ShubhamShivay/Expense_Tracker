@@ -40,12 +40,12 @@ const RegistrationForm = () => {
     },
     validationSchema,
     onSubmit: (values) => {
-      console.log(values);
+      // console.log(values);
 
       mutateAsync(values)
         .then((data) => {})
         .catch((error) => {
-          console.log(error);
+          // console.log(error);
         });
     },
   });

@@ -36,7 +36,7 @@ const LoginForm = () => {
     //Validations
     validationSchema,
     onSubmit: (values) => {
-      console.log(values);
+      // console.log(values);
 
       mutateAsync(values)
         .then((data) => {
@@ -44,7 +44,7 @@ const LoginForm = () => {
           dispatch(loginAction(data)); 
           // ! Store token in local storage
           localStorage.setItem("userInfo", JSON.stringify(data.data));
-          console.log(data);
+          // console.log(data);
         })
         .catch((error) => {
           console.log(error);
