@@ -12,8 +12,9 @@ import { FaFilter } from "react-icons/fa6";
 import { Link } from "react-router-dom";
 import { getUserFromStorage } from "../../utils/getUserFromStorage";
 
-const user = getUserFromStorage();
 const HeroSection = () => {
+  const user = getUserFromStorage();
+
   return (
     <>
       <div className="bg-gradient-to-r from-green-400 to-blue-500 text-white py-20 px-4">
@@ -45,7 +46,7 @@ const HeroSection = () => {
           </div>
 
           {/* Call to Action Button */}
-          <Link to={user.token ? "/dashboard" : "/login"}>
+          <Link to={user?.token ? "/dashboard" : "/login"}>
             <button className="mt-8 px-6 py-3 bg-white text-green-500 font-semibold rounded-lg shadow-md hover:bg-gray-100 transition duration-300">
               Get Started
             </button>
