@@ -116,7 +116,7 @@ const LoginForm = () => {
         >
           Login
         </button>
-        //! For New User
+        {/* //! For New User */}
         <p className="text-sm text-center text-gray-500">
           Don't have an account?{" "}
           <a
